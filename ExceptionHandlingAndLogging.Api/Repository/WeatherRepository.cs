@@ -20,7 +20,7 @@ namespace ExceptionHandlingAndLogging.Api.Repository
               message: $"GetAllWeaher Method: try to get all weather");
 
             var res = _context;
-            //throw new NulLReferanceException("Weather data is empty");
+            throw new NullReferenceException("Weather data is empty");
 
             _logger.Log(LogLevel.Information,
                message: $"GetAllWeaher Method: operation succesfull");
