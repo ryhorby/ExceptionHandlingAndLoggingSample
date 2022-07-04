@@ -20,11 +20,9 @@ namespace ExceptionHandlingAndLogging.Api.Controllers
         [HttpGet(Name = "GetWeatherList")]
         public Dto GetWeatherList()
         {
-            _logger.LogInformation("GetWeatherList endpoint: operation executing....");
+            _logger.LogInformation("GetWeaherList controller: executing....");
 
             var response = _repository.GetAllWeather();
-
-            _logger.LogInformation("GetWeatherList endpoint: finish successfully");
 
             return new Dto()    
             {
