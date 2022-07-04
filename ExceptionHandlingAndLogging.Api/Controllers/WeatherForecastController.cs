@@ -24,6 +24,8 @@ namespace ExceptionHandlingAndLogging.Api.Controllers
 
             var response = _repository.GetAllWeather();
 
+            _logger.LogInformation("GetWeatherList endpoint: finish successfully");
+
             return new Dto()    
             {
                 Data = response,

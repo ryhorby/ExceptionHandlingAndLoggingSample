@@ -23,6 +23,8 @@ namespace ExceptionHandlingAndLogging.Api.Middleware
             }
             catch (Exception exception)
             {
+                _logger.LogError($"Error message: {exception.Message}");
+
                 var response = context.Response;
                 response.ContentType = "application/json";
 
@@ -40,8 +42,6 @@ namespace ExceptionHandlingAndLogging.Api.Middleware
                     {
                         ErrorMessage = exception.Message
                     });
-
-                _logger.LogError(result);
                 
                 await response.WriteAsync(result);
             }

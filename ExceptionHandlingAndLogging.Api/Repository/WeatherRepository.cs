@@ -16,14 +16,15 @@ namespace ExceptionHandlingAndLogging.Api.Repository
         
         public IEnumerable<WeatherForecast> GetAllWeather()
         {
+            
             _logger.Log(LogLevel.Information,
-              message: $"GetAllWeaher Method: try to get all weather");
+              message: $"GetAllWeaher repository: executing....");
 
             var res = _context;
-            throw new NullReferenceException("Weather data is empty");
+            //throw new NullReferenceException("Weather data is empty");
 
             _logger.Log(LogLevel.Information,
-               message: $"GetAllWeaher Method: operation succesfull");
+               message: $"GetAllWeaher repository: successful finish");
 
             return res;
         }
